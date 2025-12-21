@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hansana Edirisinghe</title>
+    <meta name="title" content="Hansana Edirisinghe | Creative Film Production">
+<meta name="description" content="Official portfolio of Hansana Edirisinghe. A creative film production, high quality videos using new technologies, high quality camera, experience crew, and artificial interligence.">
+<meta name="keywords" content="Hansana Edirisinghe, Creative Film production, Portfolio, UI/UX Design, Cinematic Commercial Making, Brand Devoloping, Sri Lankan Creative High demand Film Crew">
+<meta name="author" content="Hansana Edirisinghe">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://your-vercel-link.vercel.app/">
+<meta property="og:title" content="Hansana Edirisinghe | Creative Film Production">
+<meta property="og:description" content="Explore our creative journey and short film projects in a cinematic digital experience.">
+<meta property="og:image" content="Images/Title/Untitled design (7).png">
+    <link rel="icon" type="image/x-icon" href="Images\Title\Untitled design (7).png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* International Cinema Style Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #050505; 
+            color: #ffffff; 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, .font-bold { font-family: 'Syncopate', sans-serif; letter-spacing: -0.02em; }
+
+        /* Cinematic Background Grain Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Navbar Refined Scroll Effect */
+        #navbar { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); border-bottom: 1px solid rgba(255,255,255,0); }
+        #navbar.scrolled { 
+            background: rgba(0, 0, 0, 0.85); 
+            backdrop-filter: blur(20px); 
+            padding-top: 0.8rem; 
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        /* Hero Animations */
+        .animate-bounce { animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        
+        /* Cinematic Glow & Gradient Text */
+        .cinematic-glow { 
+            text-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+            background: linear-gradient(to bottom, #fff 40%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Netflix-style Project Cards */
+        .project-card { 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(220, 38, 38, 0.2);
+        }
+        .project-card img { filter: grayscale(20%) brightness(0.7); transition: all 0.7s ease; }
+        .project-card:hover img { filter: grayscale(0%) brightness(1); transform: scale(1.1); }
+
+        /* Glassmorphism Service Cards */
+        .service-card { 
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover { 
+            border-color: rgba(220, 38, 38, 0.5); 
+            transform: translateY(-8px);
+            background: rgba(20, 20, 20, 0.9);
+            box-shadow: 0 15px 40px -10px rgba(220, 38, 38, 0.2); 
+        }
+
+        /* Modal Overhaul */
+        .modal { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0, 0, 0, 0.92); z-index: 1000; align-items: center; 
+            justify-content: center; padding: 24px; overflow-y: auto; 
+            backdrop-filter: blur(15px); transition: opacity 0.4s ease;
+        }
+        .modal.active { display: flex; }
+
+        /* Custom Cinematic Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #DC2626; }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="Images\Title\Untitled design (7).png" alt="Logo" class="h-10 w-10 object-contain">
+                <div class="text-2xl font-bold tracking-tighter uppercase">HANSANA EDIRISINGHE<span class="text-red-600">.</span></div>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-sm uppercase tracking-wider hover:text-red-600 transition-colors">Home</a>
+                <a href="#about" class="text-sm uppercase tracking-wider hover:text-red-600 transition-colors">About</a>
+                <a href="#portfolio" class="text-sm uppercase tracking-wider hover:text-red-600 transition-colors">Our Works</a>
+                <a href="#services" class="text-sm uppercase tracking-wider hover:text-red-600 transition-colors">Services</a>
+                <a href="#contact" class="text-sm uppercase tracking-wider hover:text-red-600 transition-colors">Contact Us </a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">☰</button>
+        </div>
+
+        <div id="mobile-menu" class="hidden bg-black/95 absolute w-full px-6 py-8 space-y-6 border-b border-gray-800">
+            <a href="#home" class="mobile-link block text-lg uppercase">Home</a>
+            <a href="#about" class="mobile-link block text-lg uppercase">About</a>
+            <a href="#portfolio" class="mobile-link block text-lg uppercase">Portfolio</a>
+            <a href="#services" class="mobile-link block text-lg uppercase">Services</a>
+            <a href="#contact" class="mobile-link block text-lg uppercase">Contact Us</a>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6">
+            <div class="w-1 h-16 bg-red-600 mx-auto mb-8"></div>
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 cinematic-glow">Hansana<br><span class="text-red-600">Edirisinghe</span></h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-12 tracking-[0.2em] uppercase">From Vision to Screen</p>
+            <button onclick="openModal(2)" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 uppercase tracking-widest font-bold transition-all transform hover:scale-105 cursor-pointer">View Our Latest</button>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce text-red-600 opacity-80">
+            <i class="fas fa-video text-3xl"></i>
+            <p class="text-[10px] uppercase tracking-[0.3em] mt-2 text-gray-500 text-center">Scroll</p>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-black">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6 italic tracking-tight">About <span class="text-red-600">Us</span></h2>
+                <p class="text-gray-400 text-lg leading-relaxed mb-6">We are a creative team led by Hansana Edirisinghe, making films that tell real stories and inspire people. We turn ideas into films, handling everything to bring our vision to life.</p>
+                <div class="border-l-4 border-red-600 pl-6 mt-8">
+                    <h3 class="text-xl font-bold mb-2">Our Philosophy</h3>
+                    <p class="text-gray-400">We believe in telling real stories that inspire, connect, and leave a lasting impact. Every film we create is made with passion, creativity, and a commitment to quality.</p>
+                </div>
+            </div>
+            <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
+                <h3 class="text-2xl font-bold mb-6 text-red-600 flex items-center">
+                    <i class="fas fa-clapperboard mr-3 text-sm"></i> Expertise
+                </h3>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="hover:text-red-500 transition-colors">• Film Production</li>
+                    <li class="hover:text-red-500 transition-colors">• Creative Direction</li>
+                    <li class="hover:text-red-500 transition-colors">• Brand Strategy</li>
+                    <li class="hover:text-red-500 transition-colors">• Visual Identity Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-4xl font-bold">Our <span class="text-red-600">Works</span></h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+            <div class="project-card group relative overflow-hidden cursor-pointer aspect-video rounded-xl" onclick="openModal(1)">
+                <img src="Images\Our Projects\Nagaraye Husma (The Breath of the City)\Nagaraye Husma Thumbnail.png" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
+                    <i class="fas fa-play-circle text-5xl text-red-600 mb-4"></i>
+                    <h3 class="text-2xl font-bold">නගරයේ හුස්ම Nagaraye Husma (The Breath of the City)</h3>
+                    <p class="text-red-600 mt-2 uppercase text-sm font-bold">Click to Watch</p>
+                </div>
+            </div>
+            <div class="project-card group relative overflow-hidden cursor-pointer aspect-video rounded-xl" onclick="openModal(2)">
+                <img src="Images\Our Projects\Mean for a Unheard Life\Untitled design.jpg" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
+                    <i class="fas fa-play-circle text-5xl text-red-600 mb-4"></i>
+                    <h3 class="text-2xl font-bold">Mean for a Unheard Life</h3>
+                    <p class="text-red-600 mt-2 uppercase text-sm font-bold">Click to Watch</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-black relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-red-900/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold cinematic-glow">Our <span class="text-red-600">Services</span></h2>
+                <div class="w-24 h-1 bg-red-600 mx-auto mt-4"></div>
+                <p class="text-gray-500 mt-6 tracking-[0.2em] uppercase text-sm">Expertise across the creative spectrum</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-film text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Film Production</h3>
+                    <p class="text-gray-400 leading-relaxed">From concept to final cut, I craft cinematic stories that resonate with your target audience.</p>
+                </div>
+
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-compass text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Creative Direction</h3>
+                    <p class="text-gray-400 leading-relaxed">Strategic visual leadership that transforms ideas into powerful and unique brand experiences.</p>
+                </div>
+
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-video text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Cinematography</h3>
+                    <p class="text-gray-400 leading-relaxed">Stunning visuals captured with creativity and precision using high-end industry standards.</p>
+                </div>
+
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-microphone-lines text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Sound Recording</h3>
+                    <p class="text-gray-400 leading-relaxed">We provide high quality sound recording for films, ensuring clear and professional audio impact.</p>
+                </div>
+
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-scissors text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Editing & Post-Production</h3>
+                    <p class="text-gray-400 leading-relaxed">Smooth editing, color grading, and sound design to bring your project to its full potential.</p>
+                </div>
+
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-pen-nib text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Scriptwriting</h3>
+                    <p class="text-gray-400 leading-relaxed">Engaging scripts and compelling stories tailored specifically to your creative vision.</p>
+                </div>
+
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-music text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Music & Sound Design</h3>
+                    <p class="text-gray-400 leading-relaxed">Original scores and immersive soundscapes that enhance the emotional depth of your film.</p>
+                </div>
+
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-users text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Cast Services</h3>
+                    <p class="text-gray-400 leading-relaxed">Working with skilled actors and storytellers to deliver high-quality, innovative performances.</p>
+                </div>
+
+                <div class="service-card p-8 bg-gradient-to-b from-gray-900/50 to-black rounded-xl backdrop-blur-sm border border-gray-800">
+                    <i class="fas fa-bullseye text-red-600 text-3xl mb-6 block"></i>
+                    <h3 class="text-xl font-bold mb-4 tracking-tight">Brand Strategy</h3>
+                    <p class="text-gray-400 leading-relaxed">Building authentic brand identities through research and visual storytelling excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer id="contact" class="relative bg-black pt-24 pb-12 overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 relative z-10">
+        <div class="lg:col-span-5">
+            <h2 class="text-5xl font-extrabold tracking-tighter mb-8">
+                LET'S CREATE <br>
+                <span class="text-red-600">MAGIC TOGETHER.</span>
+            </h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8 max-w-md">
+                We turn cinematic visions into reality. Whether it's a film, a brand story, or creative direction, our team is ready to push the boundaries of storytelling.
+            </p>
+            
+            <div class="space-y-6">
+                <a href="mailto:hirunhansana2@gmail.com" class="flex items-center group cursor-pointer">
+                    <div class="w-12 h-12 bg-gray-900 flex items-center justify-center rounded-full group-hover:bg-red-600 transition-all duration-300 mr-4">
+                        <i class="fas fa-envelope text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest">Email Us</p>
+                        <p class="text-white font-medium">hirunhansana2@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/94718920869" target="_blank" class="flex items-center group cursor-pointer">
+                    <div class="w-12 h-12 bg-gray-900 flex items-center justify-center rounded-full group-hover:bg-green-600 transition-all duration-300 mr-4">
+                        <i class="fab fa-whatsapp text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest">WhatsApp</p>
+                        <p class="text-white font-medium">+94 71 892 0869</p>
+                    </div>
+                </a>
+
+                <a href="tel:+94718920869" class="flex items-center group cursor-pointer">
+                    <div class="w-12 h-12 bg-gray-900 flex items-center justify-center rounded-full group-hover:bg-red-600 transition-all duration-300 mr-4">
+                        <i class="fas fa-phone-alt text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest">Call Us</p>
+                        <p class="text-white font-medium">+94 71 892 0869</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="lg:col-span-7 grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-white font-bold text-xl mb-6 flex items-center">
+                    <span class="w-8 h-px bg-red-600 mr-3"></span> EXPERTISE
+                </h3>
+                <ul class="space-y-4 text-gray-400">
+                    <li class="hover:text-red-500 transition-colors cursor-default">• Film Production</li>
+                    <li class="hover:text-red-500 transition-colors cursor-default">• Creative Direction</li>
+                    <li class="hover:text-red-500 transition-colors cursor-default">• Brand Strategy</li>
+                    <li class="hover:text-red-500 transition-colors cursor-default">• Cinematography</li>
+                    <li class="hover:text-red-500 transition-colors cursor-default">• Post Production</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white font-bold text-xl mb-6 flex items-center">
+                    <span class="w-8 h-px bg-red-600 mr-3"></span> FOLLOW US
+                </h3>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <a href="https://www.imdb.com/name/nm17935452/" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fab fa-imdb text-lg text-white"></i>
+                    </a>
+                    <a href="https://youtube.com/@hansanaedirisinghe" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fab fa-youtube text-lg text-white"></i>
+                    </a>
+                    <a href="https://vimeo.com/user244608226" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fab fa-vimeo-v text-lg text-white"></i>
+                    </a>
+                    <a href="https://filmfreeway.com/HansanaEdirisinghe" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fas fa-film text-lg text-white"></i>
+                    </a>
+                    <a href="https://web.facebook.com/hansana.edirisinghe2" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fab fa-facebook-f text-lg text-white"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hansana-edirisinghe-352472345/" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fab fa-linkedin-in text-lg text-white"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hansana.edirisinghe/" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fab fa-instagram text-lg text-white"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@hansana.edirisinghe" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fab fa-tiktok text-lg text-white"></i>
+                    </a>
+                    <a href="https://x.com/HansanaEdi86271" target="_blank" class="w-10 h-10 border border-gray-800 flex items-center justify-center rounded-lg hover:bg-red-600 hover:border-red-600 transition-all duration-300">
+                        <i class="fab fa-x-twitter text-lg text-white"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm italic leading-relaxed">From Vision to Screen</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 mt-24 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+        <p>&copy; 2025 HANSANA EDIRISINGHE. All Rights Reserved.</p>
+        <div class="mt-4 md:mt-0 space-x-6 uppercase tracking-widest text-[10px]">
+            <a href="#home" class="hover:text-red-600 transition">Home</a>
+            <a href="#services" class="hover:text-red-600 transition">Services</a>
+        </div>
+    </div>
+</footer>
+
+    <div id="modal-1" class="modal" onclick="closeModal(1)">
+    <div class="max-w-4xl bg-gray-900 p-4 relative rounded-xl" onclick="event.stopPropagation()">
+        
+        <div class="relative w-full overflow-hidden rounded-lg shadow-2xl group" style="padding-top: 56.25%;">
+            
+            <iframe 
+                id="youtube-player-1"
+                src="https://www.youtube.com/embed/Z6Z_iGAJsTw?si=QDD2DGtYU5M7Ud3P" 
+                class="absolute top-0 left-0 w-full h-full border-none rounded-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+
+            <div id="video-overlay-1" 
+                 class="absolute inset-0 flex items-center justify-center bg-black/50 pointer-events-none transition-opacity duration-500 group-hover:opacity-0">
+                <span class="text-white text-4xl md:text-6xl font-bold tracking-widest uppercase border-2 border-white px-8 py-3 bg-black/20 backdrop-blur-sm" 
+                      style="font-family: 'Syncopate', sans-serif;">
+                    Trailer
+                </span>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-4">නගරයේ හුස්ම Nagaraye Husma (The Breath of the City) 2025</h3>
+        <p class="text-gray-400 mt-2 italic">“නගරයේ හුස්ම” is a Sri Lankan short film that explores the reality of air pollution...</p>
+        
+        <div class="mt-4 grid grid-cols-2 gap-2 text-sm">
+            <p class="text-gray-300"><span class="text-red-600">Director:</span> Hansana Edirisinghe</p>
+            <p class="text-gray-300"><span class="text-red-600">Location:</span> Panadura, SL</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            <a href="https://www.imdb.com/title/tt39075245/" class="bg-yellow-600 text-black font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-yellow-500"><i class="fab fa-imdb"></i> Rate on IMDB</a>
+            <a href="https://youtu.be/Kwr7POu1EP8" target="_blank" class="bg-red-600 text-white font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-red-500"><i class="fab fa-youtube"></i> Watch full video</a>
+            <a href="https://vimeo.com/1126461800" target="_blank" class="bg-blue-600 text-white font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-blue-500"><i class="fab fa-vimeo-v"></i> Watch full video</a>
+        </div>
+
+        <button onclick="closeModal(1)" class="absolute -top-12 right-0 text-white text-4xl hover:text-red-600 transition">&times;</button>
+    </div>
+</div>
+
+<style>
+    /* Trailer එක හෙමින් අතුරුදහන් වීමට (Hover effect) */
+    .group:hover #video-overlay-1 {
+        opacity: 0;
+    }
+</style>
+
+    <div id="modal-2" class="modal" onclick="closeModal(2)">
+    <div class="max-w-4xl bg-gray-900 p-4 relative rounded-xl" onclick="event.stopPropagation()">
+        
+        <div class="relative w-full overflow-hidden rounded-lg shadow-2xl group" style="padding-top: 56.25%;">
+            
+            <iframe 
+                id="youtube-player-2"
+                src="https://www.youtube.com/embed/hWib3E84hzQ?si=RROw1d7Ft5SURDxO" 
+                class="absolute top-0 left-0 w-full h-full border-none rounded-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+
+            <div id="video-overlay-2" 
+                 class="absolute inset-0 flex items-center justify-center bg-black/50 pointer-events-none transition-opacity duration-500 group-hover:opacity-0">
+                <span class="text-white text-4xl md:text-6xl font-bold tracking-widest uppercase border-2 border-white px-8 py-3 bg-black/20 backdrop-blur-sm" 
+                      style="font-family: 'Syncopate', sans-serif;">
+                    Trailer
+                </span>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mt-4">Mean for a Unheard Life 2025</h3>
+        <p class="text-gray-400 mt-2 italic">A powerful social drama that gives a voice to a child whose pain has been ignored for too long...</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            <a href="https://www.imdb.com/title/tt39130937/" target="_blank" class="bg-yellow-600 text-black font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-yellow-500">
+                <i class="fab fa-imdb"></i> Rate on IMDB
+            </a>
+            <a href="https://youtu.be/DsX43BeNFss" target="_blank" class="bg-red-600 text-white font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-red-500">
+                <i class="fab fa-youtube"></i> Watch full video
+            </a>
+        </div>
+
+        <button onclick="closeModal(2)" class="absolute -top-12 right-0 text-white text-4xl hover:text-red-600 transition">&times;</button>
+    </div>
+</div>
+
+<style>
+    /* Trailer Label එක Hover කළ විට අතුරුදහන් වීමට (මෙය එක පාරක් තිබීම සෑහේ) */
+    .group:hover #video-overlay-1, 
+    .group:hover #video-overlay-2 {
+        opacity: 0;
+    }
+</style>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            window.scrollY > 50 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled');
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Modal Controls
+        function openModal(id) {
+            document.getElementById(`modal-${id}`).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            document.getElementById(`modal-${id}`).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
