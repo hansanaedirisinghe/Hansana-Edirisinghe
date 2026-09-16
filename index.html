@@ -244,13 +244,13 @@
                 </div>
             </div>
             <div class="project-card group relative overflow-hidden cursor-pointer aspect-video rounded-xl" onclick="openModal(3)">
-    <img src="Images\Our Projects\NEW PROJECT FOLDER\thumbnail.jpg" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
-        <i class="fas fa-play-circle text-5xl text-red-600 mb-4"></i>
-        <h3 class="text-2xl font-bold">NEW PROJECT NAME</h3>
-        <p class="text-red-600 mt-2 uppercase text-sm font-bold">Click to Watch</p>
-    </div>
-</div>
+                <img src="Images\Our Projects\New Project\New Project Thumbnail.jpg" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
+                    <i class="fas fa-play-circle text-5xl text-red-600 mb-4"></i>
+                    <h3 class="text-2xl font-bold">New Project Title</h3>
+                    <p class="text-red-600 mt-2 uppercase text-sm font-bold">Click to Watch</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -518,36 +518,42 @@
         <button onclick="closeModal(2)" class="absolute -top-12 right-0 text-white text-4xl hover:text-red-600 transition">&times;</button>
     </div>
 </div>
-<div id="modal-3" class="modal" onclick="closeModal(3)">
+
+    <div id="modal-3" class="modal" onclick="closeModal(3)">
     <div class="max-w-4xl bg-gray-900 p-4 relative rounded-xl" onclick="event.stopPropagation()">
-
+        
         <div class="relative w-full overflow-hidden rounded-lg shadow-2xl group" style="padding-top: 56.25%;">
-
-            <iframe
+            
+            <iframe 
                 id="youtube-player-3"
-                src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+                src="https://www.youtube.com/embed/VIDEO_ID_HERE" 
                 class="absolute top-0 left-0 w-full h-full border-none rounded-lg"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
 
-            <div id="video-overlay-3"
+            <div id="video-overlay-3" 
                  class="absolute inset-0 flex items-center justify-center bg-black/50 pointer-events-none transition-opacity duration-500 group-hover:opacity-0">
-                <span class="text-white text-4xl md:text-6xl font-bold tracking-widest uppercase border-2 border-white px-8 py-3 bg-black/20 backdrop-blur-sm"
+                <span class="text-white text-4xl md:text-6xl font-bold tracking-widest uppercase border-2 border-white px-8 py-3 bg-black/20 backdrop-blur-sm" 
                       style="font-family: 'Syncopate', sans-serif;">
                     Trailer
                 </span>
             </div>
         </div>
 
-        <h3 class="text-2xl font-bold mt-4">NEW PROJECT NAME 2026</h3>
-        <p class="text-gray-400 mt-2 italic">Short description here...</p>
+        <h3 class="text-2xl font-bold mt-4">New Project Title 2026</h3>
+        <p class="text-gray-400 mt-2 italic">Short description of your new project goes here...</p>
+        
+        <div class="mt-4 grid grid-cols-2 gap-2 text-sm">
+            <p class="text-gray-300"><span class="text-red-600">Director:</span> Hansana Edirisinghe</p>
+            <p class="text-gray-300"><span class="text-red-600">Location:</span> Sri Lanka</p>
+        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-            <a href="IMDB_LINK_HERE" target="_blank" class="bg-yellow-600 text-black font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-yellow-500">
+            <a href="#" target="_blank" class="bg-yellow-600 text-black font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-yellow-500">
                 <i class="fab fa-imdb"></i> Rate on IMDB
             </a>
-            <a href="YOUTUBE_LINK_HERE" target="_blank" class="bg-red-600 text-white font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-red-500">
+            <a href="#" target="_blank" class="bg-red-600 text-white font-bold p-3 text-center rounded flex items-center justify-center gap-2 transition hover:bg-red-500">
                 <i class="fab fa-youtube"></i> Watch full video
             </a>
         </div>
@@ -557,12 +563,10 @@
 </div>
 
 <style>
-    .group:hover #video-overlay-3 { opacity: 0; }
-</style>
-<style>
     /* Trailer Label එක Hover කළ විට අතුරුදහන් වීමට (මෙය එක පාරක් තිබීම සෑහේ) */
     .group:hover #video-overlay-1, 
-    .group:hover #video-overlay-2 {
+    .group:hover #video-overlay-2,
+    .group:hover #video-overlay-3 {
         opacity: 0;
     }
 </style>
